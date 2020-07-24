@@ -18,6 +18,8 @@ public class MidiPlayer {
 
     private MidiChannel drumChannel;
     private MidiChannel pianoChannel;
+    Consumer<Integer> onNotePlayed;
+
 
     public MidiPlayer() {
         noteSequence = new NoteSequence(SEQUENCE_LENGTH);
@@ -49,6 +51,7 @@ public class MidiPlayer {
                     if (!mute) {
                         playNotes(i);
                     }
+                    onNotePlayed.accept(i);
                     try {
                         Thread.sleep(7500 / tempo);
                     } catch (InterruptedException e) {
@@ -90,15 +93,19 @@ public class MidiPlayer {
         return tempo;
     }
 
-    public void setTempo(int tempo) {
-        this.tempo = tempo;
-    }
-
     public void stop() {
         this.stopped = true;
     }
 
     public void setMute(boolean mute) {
         this.mute = mute;
+    }
+
+    public void setOnNotePlayed(Consumer<Integer> onNotePlayed) {
+        this.onNotePlayed = onNotePlayed;
+    }
+
+    public void setTempo(int tempo) {
+        this.tempo = tempo;
     }
 }
