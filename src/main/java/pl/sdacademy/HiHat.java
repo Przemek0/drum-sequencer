@@ -1,12 +1,11 @@
 package pl.sdacademy;
 
 import javafx.scene.control.CheckBox;
-import javafx.scene.layout.GridPane;
 
 public class HiHat extends NoteControls <CheckBox> {
 
     public HiHat() {
-        super("HiHat");
+        super();
     }
 
     @Override

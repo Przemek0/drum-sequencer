@@ -2,18 +2,17 @@ package pl.sdacademy;
 
 
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.GridPane;
 
-public class Piano extends NoteControls<ChoiceBox> {
+public class Piano extends NoteControls <ChoiceBox<Integer>> {
 
     public Piano() {
-        super("Piano");
+        super();
     }
 
     @Override
     protected void initialization() {
         for (int i = 0; i < 32; i++) {
-            noteControls.put(i, new ChoiceBox());
+            noteControls.put(i, new ChoiceBox<>());
         }
 
         noteControls.forEach((key, value) -> {

@@ -1,12 +1,11 @@
 package pl.sdacademy;
 
 import javafx.scene.control.CheckBox;
-import javafx.scene.layout.GridPane;
 
 public class Kick extends NoteControls<CheckBox> {
 
     public Kick() {
-        super("Kick");
+        super();
     }
 
     @Override

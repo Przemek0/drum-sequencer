@@ -1,12 +1,11 @@
 package pl.sdacademy;
 
 import javafx.scene.control.CheckBox;
-import javafx.scene.layout.GridPane;
 
 public class Snare extends NoteControls<CheckBox> {
 
     public Snare() {
-        super("Snare");
+        super();
     }
 
     @Override

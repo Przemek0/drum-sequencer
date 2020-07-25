@@ -1,28 +1,17 @@
 package pl.sdacademy;
 
-import javafx.scene.Node;
+import javafx.scene.control.Control;
 import javafx.scene.layout.GridPane;
 
-import javax.sound.sampled.Control;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class NoteControls<V extends Node> {
-    protected String name;
+public abstract class NoteControls<V extends Control> {
     protected Map<Integer, V>  noteControls;
 
-    public NoteControls(String name) {
-        this.name = name;
+    public NoteControls() {
         this.noteControls = new HashMap<>();
         initialization();
-    }
-
-    public Map<Integer, V> getNoteControls() {
-        return noteControls;
-    }
-
-    public String getName() {
-        return name;
     }
 
     protected abstract void initialization();
